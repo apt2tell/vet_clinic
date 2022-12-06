@@ -1,10 +1,17 @@
-# curriculum-databases-projects-template
+![](https://img.shields.io/badge/Microverse-blueviolet)
 
-> This template should be used for database related projects at Microverse.
-> Generate your own repository, update this README and edit all files content while working on projects. You should not be adding any new files unless asked otherwise.
+# Vet_clinic Database - Create Animals Table
+
+> This README has detailed information on how to create <code>animals</code> table, INSERT data and SQL QUERY for <code>vet_clinic</code> database project.
 
 
 ## Getting Started
+
+### To launch the project locally:
+
+- Clone this repository in your local machine terminal:
+
+git clone <code>https://github.com/Okechukwu-muokwugwo/vet_clinic</code>
 
 This repository includes files with plain SQL that can be used to recreate a database:
 
@@ -15,17 +22,12 @@ This repository includes files with plain SQL that can be used to recreate a dat
 
 ## Authors
 
-👤 **Author1**
+👤 Okechukwu Muokwugwo
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- GitHub: [GitHub](https://github.com/Okechukwu-muokwugwo)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/okeimuokwugwo/)
+- Twitter: [Twitter](https://twitter.com/excel4eva)
 
-👤 **Author2**
-
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
 
 ## 🤝 Contributing
 
