@@ -11,3 +11,5 @@ CREATE TABLE IF NOT EXISTS public.animals
     CONSTRAINT animals_pkey PRIMARY KEY (id)
 );
 
+ALTER TABLE animals ADD species VARCHAR(50)
+
