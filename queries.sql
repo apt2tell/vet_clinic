@@ -12,30 +12,33 @@ SELECT * FROM animals WHERE weight_kg BETWEEN 10.4 AND 17.3 OR weight_kg IN (10.
 /* Transaction */
 BEGIN;
 
-UPDATE animals SET species = 'unspecified';
+UPDATE animals 
+SET species = 'unspecified'; -- changes made
 
+SELECT species from animals; -- changes verified
 ROLLBACK;
+
+SELECT species from animals; -- changes undone
+
+/* Another Transaction */
+
+BEGIN;
+   UPDATE animals SET species = 'digimon' WHERE name LIKE '%mon'; 
+   UPDATE animals SET species = 'pokemon' WHERE species IS NULL; 
+
+   SELECT species from animals; --  change was made
+   COMMIT;
+   SELECT species from animals; --  change persists after commit
 
 /* Another Transaction */
 
 BEGIN;
 
-UPDATE animals SET species = 'digimon' WHERE RIGHT(name, 3) = 'mon';
-UPDATE animals SET species = 'pokemon' WHERE species = 'null';
+   DELETE FROM animals;
+   SELECT COUNT(*) FROM ANIMALS;
 
-COMMIT;
-
-SELECT * FROM animals
-
-/* Another Transaction */
-
-BEGIN;
-
-DELETE FROM animals;
-
-ROLLBACK;
-
-SELECT * FROM animals
+   ROLLBACK;
+   SELECT COUNT(*) FROM ANIMALS;
 
 /* Another Transaction */
 
@@ -62,8 +65,10 @@ SELECT * FROM animals;
 SELECT COUNT(*) FROM animals;
 SELECT COUNT(*) FROM animals WHERE escape_attempts = 0;
 SELECT AVG(weight_kg) FROM animals;
-SELECT neutered FROM animals 
-GROUP BY neutered ORDER BY COUNT(escape_attempts) DESC LIMIT 1;
+
+SELECT neutered, MAX(escape_attempts) FROM animals
+GROUP BY neutered;
+
 select species, min(weight_kg) as minimum, max(weight_kg) as maximum from animals 
 GROUP BY species
 select species, avg(escape_attempts) from animals 
