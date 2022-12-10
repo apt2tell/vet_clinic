@@ -26,6 +26,9 @@ CREATE TABLE species(
     name VARCHAR(50)
 );
 
+--Remove column 'species' from animals table.
+ALTER TABLE animals DROP COLUMN species;
+
 /*Constraints */
 ALTER TABLE animals 
 ADD COLUMN species_id INT CONSTRAINT species_animals_fk 
