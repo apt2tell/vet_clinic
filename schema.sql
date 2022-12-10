@@ -13,3 +13,29 @@ CREATE TABLE IF NOT EXISTS public.animals
 
 ALTER TABLE animals ADD species VARCHAR(50)
 
+/* Create owners table */
+CREATE TABLE owners(
+    id SERIAL PRIMARY KEY,
+    full_name VARCHAR(100),
+    age INT
+);
+
+/*Create Species table */
+CREATE TABLE species(
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(50)
+);
+
+--Remove column 'species' from animals table.
+ALTER TABLE animals DROP COLUMN species;
+
+/*Constraints */
+ALTER TABLE animals 
+ADD COLUMN species_id INT CONSTRAINT species_animals_fk 
+REFERENCES species(id)
+ON UPDATE CASCADE ON DELETE CASCADE;
+
+ALTER TABLE animals 
+ADD COLUMN owner_id INT CONSTRAINT owners_animals_fk 
+REFERENCES owners(id) 
+ON UPDATE CASCADE ON DELETE CASCADE;
