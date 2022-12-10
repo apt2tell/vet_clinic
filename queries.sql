@@ -76,20 +76,18 @@ where extract(YEAR FROM date_of_birth) BETWEEN 1990 AND 2000 GROUP BY species
 
 /*Queries with JOINs*/
 -- What animals belong to Melody Pond?
-SELECT name, full_name 
+SELECT *
     FROM animals 
     INNER JOIN owners 
     ON animals.owner_id = owners.id 
     WHERE full_name = 'Melody Pond';
 
-
 -- List of all animals that are pokemon (their type is Pokemon).
-SELECT a.name, s.name AS type
-    FROM animals a 
-    INNER JOIN species s 
-    ON a.species_id = s.id 
-    WHERE s.name = 'Pokemon';
-
+SELECT * FROM animals
+   LEFT JOIN species
+   ON animals.species_id = species.id
+   WHERE species.name = 'Pokemon';
+   
 -- List all owners and their animals, remember to include those that don't own any animal.
 SELECT OW.full_name as owner_name, A.name as animal_name
 FROM owners OW
