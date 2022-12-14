@@ -46,6 +46,10 @@
 
 > <code>vet_clinic</code>Database contains information about animals and their status. Schema.sql contains information on how  to create the schema - animals table. data.sql contains inserted data for the animals table. queries.sql contains SQL query data for the table.
 
+### Database Schema Diagram vet-clinic database
+
+![drawSQL-export-2022-12-13_15_42](https://user-images.githubusercontent.com/96683843/207297192-fe604013-69bf-4763-9c6f-7c19d0f54303.png)
+
 <details>
 <summary>vet_clinic Database</summary>
   <ul>
